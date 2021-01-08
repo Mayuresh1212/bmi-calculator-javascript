@@ -1,0 +1,78 @@
+!
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BMI Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>BMI Calculator</h4>
+            </div>
+            <div class="card-body">
+                <form class=" m-auto" onsubmit="return false">
+                    <div class="form-group">
+                        <label> Weight:</label>
+                        <input type="text" id="weight" class="form-control mt-2" placeholder="Weight in Kg" required>
+                    </div>
+                    <div class="form-group">
+                        <label> height:</label>
+                        <input type="text" id="height" class="form-control mt-2" placeholder="Height in ft" required>
+                    </div>
+                    <div class="form-group">
+                        <label> BMI Value:</label>
+                        <input type="text" id="bmi" class="form-control mt-2">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success w-50 mt-2" onclick="getValue()">
+                            Check BMI</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <h6 class="text-primary">A Healthy BMI ranges between 19 and 25.</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+        function getValue() {
+            var weight = document.getElementById('weight').value;
+            var height = document.getElementById('height').value;
+
+            height = height * 12       //(1 feet = 12 inch)
+            height = height * 0.025    //now height in meter
+
+            var newbmiValue = weight / Math.pow(height, 2);
+
+            newbmiValue = Math.round(newbmiValue);
+
+            document.getElementById('bmi').value = newbmiValue;
+            
+        }
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

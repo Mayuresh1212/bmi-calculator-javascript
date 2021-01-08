@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.card{
+    background: linear-gradient(rgb(241, 224, 227), rgb(226, 224, 224));
+    box-shadow: 25px 0px 10px 5px rgba(0,0,0,0.5);
+    animation: animat 3s infinite linear;
+}
+@keyframes animat{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.02);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.card h4{
+    color: brown;
+}
+label{
+    font-weight: 500;
+}
